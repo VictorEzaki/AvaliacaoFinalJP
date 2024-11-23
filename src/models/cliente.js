@@ -1,6 +1,6 @@
 const database = require('../config/database')
 
-class Cliente {
+class ModelCliente {
     constructor() {
         this.model = database.db.define('clientes', {
             id: {
@@ -25,4 +25,4 @@ class Cliente {
     }
 }
 
-module.exports = new Cliente().model
+module.exports = new ModelCliente().model

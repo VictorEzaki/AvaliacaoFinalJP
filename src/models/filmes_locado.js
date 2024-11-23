@@ -2,7 +2,7 @@ const database = require('../config/database')
 const filme = require('./filme')
 const cliente = require('./cliente')
 
-class FilmesLocado {
+class ModelFilmesLocado {
     constructor() {
         this.model = database.db.define('filmes_locado', {
             id: {
@@ -50,4 +50,4 @@ class FilmesLocado {
     }
 }
 
-module.exports = new FilmesLocado().model
+module.exports = new ModelFilmesLocado().model
