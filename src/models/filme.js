@@ -13,7 +13,7 @@ class Filme {
                 type: database.db.Sequelize.STRING
             },
 
-            faixaEtaria: {
+            classificacaoIndicativa: {
                 type: database.db.Sequelize.INTEGER
             },
 

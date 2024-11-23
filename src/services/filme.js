@@ -1,14 +1,14 @@
 const ModelFilme = require('./../models/filme')
 
 class ServiceFilme {
-    async CreateFilme(titulo, faixaEtaria, diretor) {
-        if (!titulo || !faixaEtaria || !diretor) {
+    async CreateFilme(titulo, classificacaoIndicativa, diretor) {
+        if (!titulo || !classificacaoIndicativa || !diretor) {
             throw new Error('Preencha todos os campos!')
         }
 
         return await ModelFilme.create({
             titulo,
-            faixaEtaria,
+            classificacaoIndicativa,
             diretor
         })
     }
@@ -18,7 +18,7 @@ class ServiceFilme {
         return filmes
     }
 
-    async UpdateFilme(id, titulo, faixaEtaria, diretor) {
+    async UpdateFilme(id, titulo, classificacaoIndicativa, diretor) {
         if (!id) {
             throw new Error('Favor informar o ID!')
         }
@@ -29,7 +29,7 @@ class ServiceFilme {
         }
 
         filme.titulo = titulo || filme.titulo
-        filme.faixaEtaria = faixaEtaria || filme.faixaEtaria
+        filme.classificacaoIndicativa = classificacaoIndicativa || filme.classificacaoIndicativa
         filme.diretor = diretor || filme.diretor
 
         filme.save()

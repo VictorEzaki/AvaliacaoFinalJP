@@ -1,6 +1,6 @@
 const ModelFilmesLocado = require('../models/filmes_locado')
-const ModelFilme = require('./filme')
-const ModelCliente = require('./cliente')
+const ModelFilme = require('./../models/filme')
+const ModelCliente = require('./../models/cliente')
 
 class ServiceFilmesLocado {
     async LocarFilmes(idFilme, idCliente, dataLocacao, dataDevolucao) {
@@ -13,7 +13,7 @@ class ServiceFilmesLocado {
             throw new Error('Filme não existente!')
         }
 
-        const cliente = await ModelCliente.findByPk(idFilme)
+        const cliente = await ModelCliente.findByPk(idCliente)
         if (!cliente) {
             throw new Error('Cliente não existente!')
         }
