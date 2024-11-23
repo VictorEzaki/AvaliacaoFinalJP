@@ -1,9 +1,21 @@
 const ModelFilmesLocado = require('../models/filmes_locado')
+const ModelFilme = require('./filme')
+const ModelCliente = require('./cliente')
 
 class ServiceFilmesLocado {
     async LocarFilmes(idFilme, idCliente, dataLocacao, dataDevolucao) {
         if (!idFilme || !idCliente || !dataLocacao || !dataDevolucao) {
             throw new Error('Preencha todos os campos!')
+        }
+
+        const filme = await ModelFilme.findByPk(idFilme)
+        if (!filme) {
+            throw new Error('Filme não existente!')
+        }
+
+        const cliente = await ModelCliente.findByPk(idFilme)
+        if (!cliente) {
+            throw new Error('Cliente não existente!')
         }
 
         return await ModelFilmesLocado.create({
