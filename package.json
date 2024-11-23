@@ -1,0 +1,19 @@
+{
+  "name": "avaliacaofinaljp",
+  "version": "1.0.0",
+  "description": "Projeto da avaliação final",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Victor Ezaki",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "express": "^4.21.1",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.11.4",
+    "sequelize": "^6.37.5"
+  }
+}
