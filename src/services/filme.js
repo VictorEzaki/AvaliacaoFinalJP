@@ -46,7 +46,12 @@ class ServiceFilme {
             throw new Error("Filme não encontrado!");
         }
 
-        return filme.destroy()
+        filme.titulo = 'Filme apagado'
+        filme.classificacaoIndicativa = 0
+        filme.diretor = 'Filme apagado'
+        filme.save()
+
+        return filme
     }
 }
 

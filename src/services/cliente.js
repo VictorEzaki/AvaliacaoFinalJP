@@ -73,7 +73,12 @@ class ServiceCliente {
             throw new Error("Cliente não encontrado!");
         }
 
-        return cliente.destroy()
+        cliente.nome = 'Cliente apagado'
+        cliente.email = 'Cliente apagado'
+        cliente.senha = 'Cliente apagado'
+        cliente.save()
+
+        return cliente
     }
 }
 
